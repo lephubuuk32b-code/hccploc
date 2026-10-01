@@ -30,7 +30,6 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
-    <!-- TOP BAR ĐIỀU HƯỚNG HỆ THỐNG -->
     <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-4 flex-wrap">
@@ -40,15 +39,14 @@
             </div>
             <div class="flex items-center gap-4">
                 <a href="https://dichvucong.gov.vn" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-globe text-blue-400"></i> Cổng DVC Quốc gia</a>
-                <a href="https://huecity.gov.vn" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-building-columns text-yellow-400"></i> Cổng TP. Huế</a>
-                <button onclick="toggleAdminModal()" class="bg-accent/20 text-accent px-2 py-1 rounded hover:bg-accent hover:text-slate-900 font-medium transition flex items-center gap-1">
+                <a href="https://hue.gov.vn" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-building-columns text-yellow-400"></i> Cổng TP. Huế</a>
+                <button onclick="openAdminAuthModal()" class="bg-accent/20 text-accent px-2 py-1 rounded hover:bg-accent hover:text-slate-900 font-medium transition flex items-center gap-1">
                     <i class="fa-solid fa-user-shield"></i> Quản trị viên
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- HEADER CHÍNH -->
     <header class="bg-blue-800 text-white shadow-md sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <!-- Logo & Title -->
@@ -90,7 +88,6 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION & TRA CỨU NHANH -->
     <section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12 px-4 shadow-inner">
         <div class="max-w-7xl mx-auto text-center space-y-6">
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">GIẢI QUYẾT THỦ TỤC HÀNH CHÍNH NHANH CHÓNG - MINH BẠCH - HIỆU QUẢ</h2>
@@ -100,7 +97,7 @@
             <div class="bg-white p-3 rounded-xl shadow-lg max-w-3xl mx-auto flex flex-col md:flex-row gap-2">
                 <div class="flex-1 flex items-center bg-slate-100 px-3 py-2 rounded-lg">
                     <i class="fa-solid fa-magnifying-glass text-slate-400 mr-2"></i>
-                    <input type="text" id="searchInput" placeholder="Nhập tên thủ tục, lĩnh vực (ví dụ: Hộ tịch, Đất đai, Xây dựng...)" class="w-full bg-transparent border-none outline-none text-slate-800 text-sm">
+                    <input type="text" id="searchInput" placeholder="Nhập tên thủ tục, lĩnh vực (ví dụ: Chứng thực, Hộ tịch, Đất đai...)" class="w-full bg-transparent border-none outline-none text-slate-800 text-sm">
                 </div>
                 <button onclick="handleSearch()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition shadow flex items-center justify-center gap-2">
                     <i class="fa-solid fa-search"></i> Tra cứu ngay
@@ -109,7 +106,6 @@
         </div>
     </section>
 
-    <!-- NỘI DUNG CHÍNH -->
     <main class="max-w-7xl mx-auto px-4 py-8 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
         
         <!-- CỘT CHÍNH (BÊN TRÁI & GIỮA - 2 CỘT) -->
@@ -121,11 +117,11 @@
                     <h3 class="text-lg font-bold text-blue-900 uppercase flex items-center gap-2">
                         <i class="fa-solid fa-file-invoice text-blue-600"></i> Thủ tục hành chính phổ biến tại xã
                     </h3>
-                    <span class="text-xs text-slate-500 italic">Click để chuyển đến Cổng DVC Quốc gia / TP. Huế</span>
+                    <span class="text-xs text-slate-500 italic">Click để chuyển đến Cổng DVC Quốc gia</span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Item 1 -->
-                    <div onclick="openDVC('Khai sinh')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
+                    <!-- Item 1: Khai sinh dưới 6 tuổi -->
+                    <div onclick="openProcedure('khai-sinh')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
                         <div class="flex items-start justify-between">
                             <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2 group-hover:bg-blue-600 group-hover:text-white transition">
                                 <i class="fa-solid fa-baby"></i>
@@ -135,8 +131,8 @@
                         <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Đăng ký khai sinh cho trẻ em dưới 6 tuổi</h4>
                         <p class="text-xs text-slate-500 mt-1">Lĩnh vực: Tư pháp - Hộ tịch</p>
                     </div>
-                    <!-- Item 2 -->
-                    <div onclick="openDVC('Kết hôn')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
+                    <!-- Item 2: Đăng ký kết hôn -->
+                    <div onclick="openProcedure('ket-hon')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
                         <div class="flex items-start justify-between">
                             <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2 group-hover:bg-blue-600 group-hover:text-white transition">
                                 <i class="fa-solid fa-ring"></i>
@@ -146,32 +142,32 @@
                         <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Đăng ký kết hôn</h4>
                         <p class="text-xs text-slate-500 mt-1">Lĩnh vực: Tư pháp - Hộ tịch</p>
                     </div>
-                    <!-- Item 3 -->
-                    <div onclick="openDVC('Xác nhận tình trạng nhân thân')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
+                    <!-- Item 3: Chứng thực (Thủ tục mới thêm) -->
+                    <div onclick="openProcedure('chung-thuc')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
                         <div class="flex items-start justify-between">
                             <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2 group-hover:bg-blue-600 group-hover:text-white transition">
-                                <i class="fa-solid fa-address-card"></i>
+                                <i class="fa-solid fa-stamp"></i>
                             </div>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-semibold">Trực tuyến một phần</span>
+                            <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-semibold">Trực tuyến một phần / Trực tiếp</span>
                         </div>
-                        <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Cấp Giấy xác nhận tình trạng hôn nhân</h4>
+                        <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Chứng thực bản sao từ bản chính, chứng thực chữ ký</h4>
                         <p class="text-xs text-slate-500 mt-1">Lĩnh vực: Tư pháp - Hộ tịch</p>
                     </div>
-                    <!-- Item 4 -->
-                    <div onclick="openDVC('Đất đai xây dựng')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
+                    <!-- Item 4: Đăng ký đất đai lần đầu (Thủ tục mới thêm) -->
+                    <div onclick="openProcedure('dat-dai-lan-dau')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
                         <div class="flex items-start justify-between">
                             <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2 group-hover:bg-blue-600 group-hover:text-white transition">
-                                <i class="fa-solid fa-house-chimney"></i>
+                                <i class="fa-solid fa-map-location-dot"></i>
                             </div>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-semibold">Trực tuyến một phần</span>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-semibold">Trực tuyến / Tại bộ phận Một cửa</span>
                         </div>
-                        <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Đăng ký biến động đất đai / Sửa chữa nhà ở</h4>
-                        <p class="text-xs text-slate-500 mt-1">Lĩnh vực: Địa chính - Xây dựng</p>
+                        <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Đăng ký đất đai lần đầu, cấp Giấy chứng nhận QSDĐ</h4>
+                        <p class="text-xs text-slate-500 mt-1">Lĩnh vực: Địa chính - Đất đai</p>
                     </div>
                 </div>
             </section>
 
-            <!-- KHU VỰC ĐẶT LỊCH HẸN TRỰC TUYẾN (KẾT NỐI DB CƠ SỞ) -->
+            <!-- KHU VỰC ĐẶT LỊCH HẸN TRỰC TUYẾN -->
             <section id="dat-lich" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <div class="border-b pb-3 mb-4 flex justify-between items-center">
                     <h3 class="text-lg font-bold text-blue-900 uppercase flex items-center gap-2">
@@ -194,10 +190,10 @@
                         <div>
                             <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Lĩnh vực thủ tục (*)</label>
                             <select id="apoField" class="w-full px-3 py-2 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-blue-500 outline-none">
-                                <option value="Hộ tịch - Tư pháp">Hộ tịch - Tư pháp</option>
-                                <option value="Đất đai - Xây dựng">Đất đai - Xây dựng</option>
+                                <option value="Hộ tịch - Tư pháp">Hộ tịch - Tư pháp (Khai sinh, Kết hôn...)</option>
+                                <option value="Chứng thực">Chứng thực văn bản, giấy tờ</option>
+                                <option value="Đất đai - Xây dựng">Đất đai - Xây dựng (Đăng ký lần đầu...)</option>
                                 <option value="Lao động - Xã hội">Lao động - Xã hội</option>
-                                <option value="Thủ tục khác">Thủ tục khác</option>
                             </select>
                         </div>
                         <div>
@@ -260,7 +256,7 @@
 
         </div>
 
-        <!-- CỘT PHỤ (BÊN PHẢI - 1 CỘT: TIN TỨC, THỐNG KÊ, LIÊN KẾT) -->
+        <!-- CỘT PHỤ (BÊN PHẢI - 1 CỘT: THỐNG KÊ, TIN TỨC, LIÊN KẾT) -->
         <div class="space-y-6">
             
             <!-- THỐNG KÊ GIAO DỊCH -->
@@ -295,7 +291,7 @@
                         <span class="text-xs text-slate-400 mt-1 block"><i class="fa-regular fa-clock mr-1"></i> Hôm nay</span>
                     </li>
                     <li class="border-b pb-2.5">
-                        <a href="#" class="font-medium text-slate-800 hover:text-blue-600 transition block">Triển khai dịch vụ công trực tuyến toàn trình đối với nhóm thủ tục Hộ tịch.</a>
+                        <a href="#" class="font-medium text-slate-800 hover:text-blue-600 transition block">Triển khai dịch vụ công trực tuyến toàn trình đối với thủ tục Đăng ký đất đai lần đầu và Hộ tịch.</a>
                         <span class="text-xs text-slate-400 mt-1 block"><i class="fa-regular fa-clock mr-1"></i> 2 ngày trước</span>
                     </li>
                     <li>
@@ -330,7 +326,6 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer class="bg-slate-900 text-slate-300 mt-12 border-t border-slate-800 text-sm">
         <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -362,38 +357,104 @@
         </div>
     </footer>
 
-    <!-- MODAL QUẢN TRỊ VIÊN (XEM LỊCH HẸN & QUẢN LÝ LIÊN KẾT) -->
-    <div id="adminModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden">
+    <!-- Modal 1: Form Đăng nhập Quản trị viên -->
+    <div id="adminAuthModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full overflow-hidden">
+            <div class="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
+                <h3 class="font-bold text-base flex items-center gap-2">
+                    <i class="fa-solid fa-user-lock"></i> Đăng nhập Quản trị viên
+                </h3>
+                <button onclick="closeAdminAuthModal()" class="text-white hover:text-red-400 text-xl font-bold">&times;</button>
+            </div>
+            <form onsubmit="handleAdminLogin(event)" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Tên đăng nhập</label>
+                    <input type="text" id="adminUser" required placeholder="admin.phuloc" class="w-full px-3 py-2 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Mật khẩu</label>
+                    <input type="password" id="adminPass" required placeholder="••••••••••••" class="w-full px-3 py-2 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div id="loginErrorMsg" class="hidden text-xs text-red-600 font-medium bg-red-50 p-2 rounded">
+                    Tên đăng nhập hoặc mật khẩu không chính xác!
+                </div>
+                <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-2.5 rounded-lg text-sm transition shadow">
+                    Đăng nhập hệ thống
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 2: Bảng Quản trị (Hiển thị Lịch hẹn & Phản ánh kiến nghị) -->
+    <div id="adminDashboardModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] flex flex-col overflow-hidden">
             <div class="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
                 <h3 class="font-bold text-lg flex items-center gap-2">
-                    <i class="fa-solid fa-user-gear"></i> Bảng Quản trị Hệ thống - Xã Phú Lộc
+                    <i class="fa-solid fa-user-gear"></i> Bảng Quản trị Hệ thống - Xã Phú Lộc (Xin chào: admin.phuloc)
                 </h3>
-                <button onclick="toggleAdminModal()" class="text-white hover:text-red-400 text-xl font-bold">&times;</button>
+                <button onclick="closeAdminDashboard()" class="text-white hover:text-red-400 text-xl font-bold">&times;</button>
             </div>
+            
             <div class="p-6 overflow-y-auto space-y-6 flex-1 bg-slate-50">
-                <!-- Danh sách lịch hẹn công dân -->
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
-                    <h4 class="font-bold text-blue-900 mb-3 flex items-center justify-between">
-                        <span><i class="fa-solid fa-calendar-check text-blue-600 mr-2"></i> Danh sách Lịch hẹn trực tuyến từ Công dân</span>
-                        <span id="badgeAppointmentCount" class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full">0 lịch hẹn</span>
-                    </h4>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs">
-                            <thead class="bg-slate-100 text-slate-700 uppercase">
-                                <tr>
-                                    <th class="p-2.5">Mã hẹn</th>
-                                    <th class="p-2.5">Họ tên</th>
-                                    <th class="p-2.5">Điện thoại</th>
-                                    <th class="p-2.5">Lĩnh vực</th>
-                                    <th class="p-2.5">Ngày & Khung giờ</th>
-                                    <th class="p-2.5">Trạng thái</th>
-                                </tr>
-                            </thead>
-                            <tbody id="adminAppointmentTableBody" class="divide-y divide-slate-200">
-                                <!-- Data injected via JS -->
-                            </tbody>
-                        </table>
+                <!-- Tab Tabs Navigation -->
+                <div class="flex border-b border-slate-200 gap-4 text-sm font-semibold">
+                    <button onclick="switchAdminTab('appointments')" id="tabBtnAppo" class="pb-2 border-b-2 border-blue-600 text-blue-900 flex items-center gap-1.5">
+                        <i class="fa-solid fa-calendar-check"></i> Quản lý Lịch hẹn (<span id="countAppoBadge">0</span>)
+                    </button>
+                    <button onclick="switchAdminTab('feedbacks')" id="tabBtnFeed" class="pb-2 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-comments"></i> Phản ánh - Kiến nghị (<span id="countFeedBadge">0</span>)
+                    </button>
+                </div>
+
+                <!-- Section 1: Quản lý Lịch hẹn -->
+                <div id="adminSectionAppo" class="space-y-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-blue-900 mb-3 flex items-center justify-between">
+                            <span>Danh sách Lịch hẹn trực tuyến từ Công dân</span>
+                            <span class="text-xs text-slate-500 font-normal">Cập nhật theo thời gian thực</span>
+                        </h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs">
+                                <thead class="bg-slate-100 text-slate-700 uppercase">
+                                    <tr>
+                                        <th class="p-2.5">Mã hẹn</th>
+                                        <th class="p-2.5">Họ tên</th>
+                                        <th class="p-2.5">Điện thoại</th>
+                                        <th class="p-2.5">Lĩnh vực</th>
+                                        <th class="p-2.5">Ngày & Khung giờ</th>
+                                        <th class="p-2.5">Nội dung</th>
+                                        <th class="p-2.5">Trạng thái</th>
+                                        <th class="p-2.5">Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminAppointmentTableBody" class="divide-y divide-slate-200">
+                                    <!-- Data injected via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Quản lý Phản ánh kiến nghị -->
+                <div id="adminSectionFeed" class="space-y-4 hidden">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
+                        <h4 class="font-bold text-blue-900 mb-3">Danh sách Phản ánh - Kiến nghị từ nhân dân</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs">
+                                <thead class="bg-slate-100 text-slate-700 uppercase">
+                                    <tr>
+                                        <th class="p-2.5">Mã phản ánh</th>
+                                        <th class="p-2.5">Tiêu đề phản ánh</th>
+                                        <th class="p-2.5">Ngày gửi</th>
+                                        <th class="p-2.5">Trạng thái xử lý</th>
+                                        <th class="p-2.5">Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminFeedbackTableBody" class="divide-y divide-slate-200">
+                                    <!-- Data injected via JS -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -407,34 +468,51 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-slate-100 px-6 py-3 border-t flex justify-end">
-                <button onclick="toggleAdminModal()" class="bg-slate-700 hover:bg-slate-800 text-white px-4 py-2 rounded text-sm font-medium">Đóng bảng quản trị</button>
+
+            <div class="bg-slate-100 px-6 py-3 border-t flex justify-between items-center">
+                <span class="text-xs text-slate-500"><i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> Đang đăng nhập với quyền: <strong>admin.phuloc</strong></span>
+                <button onclick="closeAdminDashboard()" class="bg-slate-700 hover:bg-slate-800 text-white px-4 py-2 rounded text-sm font-medium">Đóng bảng quản trị</button>
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC TƯƠNG TÁC, ĐIỀU PHỐI DVC VÀ LƯU LỊCH HẸN -->
     <script>
-        // Khởi tạo cơ sở dữ liệu giả lập (LocalStorage) cho lịch hẹn và liên kết
+        // Cơ sở dữ liệu giả lập (LocalStorage) cho lịch hẹn và phản ánh
         let appointments = JSON.parse(localStorage.getItem('phuloc_appointments')) || [
-            { code: 'PHL-82910', name: 'Trần Văn Bình', phone: '0905123456', field: 'Hộ tịch - Tư pháp', date: '2026-10-05', time: 'Buổi sáng (07:30 - 11:00)', note: 'Đăng ký khai sinh', status: 'Chờ tiếp nhận' },
-            { code: 'PHL-44192', name: 'Lê Thị Hồng', phone: '0988776655', field: 'Đất đai - Xây dựng', date: '2026-10-06', time: 'Buổi chiều (13:30 - 16:30)', note: 'Tư vấn cấp giấy chứng nhận', status: 'Đã xác nhận' }
+            { code: 'PHL-82910', name: 'Trần Văn Bình', phone: '0905123456', field: 'Hộ tịch - Tư pháp', date: '2026-10-05', time: 'Buổi sáng (07:30 - 11:00)', note: 'Đăng ký khai sinh cho con', status: 'Chờ tiếp nhận' },
+            { code: 'PHL-44192', name: 'Lê Thị Hồng', phone: '0988776655', field: 'Đất đai - Xây dựng', date: '2026-10-06', time: 'Buổi chiều (13:30 - 16:30)', note: 'Đăng ký đất đai lần đầu', status: 'Đã xác nhận' }
         ];
 
-        // 1. Điều phối TTHC tới Cổng DVC Quốc gia / TP. Huế
-        function openDVC(procedureName) {
+        let feedbacks = JSON.parse(localStorage.getItem('phuloc_feedbacks')) || [
+            { id: 'PA-101', title: 'Đề nghị hỗ trợ thủ tục cấp Giấy chứng nhận QSDĐ tại thôn 3', date: '2026-09-28', status: 'Đã chuyển chuyên môn' },
+            { id: 'PA-102', title: 'Thủ tục xác nhận tình trạng hôn nhân nhanh chóng, cảm ơn cán bộ', date: '2026-09-30', status: 'Đã hoàn thành' }
+        ];
+
+        // 1. Điều phối TTHC theo yêu cầu các liên kết cụ thể
+        function openProcedure(procType) {
             let targetUrl = "https://dichvucong.gov.vn";
-            if (procedureName.includes('Khai sinh') || procedureName.includes('Kết hôn')) {
-                targetUrl = "https://dichvucong.gov.vn/tra-cuu-thu-tuc/danh-sach";
-            } else {
-                targetUrl = "https://dichvucong.gov.vn/p/home/dvc-trang-chu.html";
+            let procTitle = "";
+
+            if (procType === 'khai-sinh') {
+                targetUrl = "https://lienthong.dichvucong.gov.vn/#/?vneid=1";
+                procTitle = "Đăng ký khai sinh cho trẻ em dưới 6 tuổi";
+            } else if (procType === 'ket-hon') {
+                targetUrl = "https://dichvucong.gov.vn/thu-tuc-hanh-chinh/019d2bfd-3fac-7489-b53b-a15eb239a6fe";
+                procTitle = "Đăng ký kết hôn";
+            } else if (procType === 'chung-thuc') {
+                targetUrl = "https://dichvucong.gov.vn";
+                procTitle = "Chứng thực bản sao từ bản chính";
+            } else if (procType === 'dat-dai-lan-dau') {
+                targetUrl = "https://dichvucong.gov.vn";
+                procTitle = "Đăng ký đất đai lần đầu";
             }
-            if(confirm(`Hệ thống sẽ chuyển hướng bạn đến cổng dịch vụ công trực tuyến để thực hiện thủ tục: "${procedureName}". Bạn có muốn tiếp tục?`)) {
+
+            if(confirm(`Hệ thống sẽ chuyển hướng bạn đến cổng dịch vụ công trực tuyến để thực hiện thủ tục: "${procTitle}". Bạn có muốn tiếp tục?`)) {
                 window.open(targetUrl, '_blank');
             }
         }
 
-        // 2. Xử lý đặt lịch hẹn trực tuyến -> Đẩy vào Cơ sở dữ liệu (LocalStorage & Admin View)
+        // 2. Xử lý đặt lịch hẹn trực tuyến
         function submitAppointment(event) {
             event.preventDefault();
             const name = document.getElementById('apoName').value;
@@ -453,7 +531,7 @@
                 field: field,
                 date: date,
                 time: time,
-                note: note,
+                note: note || 'Không có ghi chú',
                 status: 'Chờ tiếp nhận'
             };
 
@@ -470,7 +548,7 @@
             `;
 
             document.getElementById('appointmentForm').reset();
-            updateAdminData();
+            updateAdminDashboardData();
         }
 
         // 3. Tra cứu hồ sơ nhanh
@@ -490,29 +568,85 @@
                 alert('Vui lòng nhập nội dung phản ánh kiến nghị!');
                 return;
             }
-            alert(`Cảm ơn bạn! Phản ánh "${title}" đã được ghi nhận và chuyển tới Chủ tịch UBND xã Phú Lộc để xem xét xử lý theo quy định.`);
+
+            const feedbackId = 'PA-' + Math.floor(100 + Math.random() * 900);
+            const newFeed = {
+                id: feedbackId,
+                title: title,
+                date: new Date().toISOString().slice(0, 10),
+                status: 'Mới tiếp nhận'
+            };
+
+            feedbacks.unshift(newFeed);
+            localStorage.setItem('phuloc_feedbacks', JSON.stringify(feedbacks));
+
+            alert(`Cảm ơn bạn! Phản ánh "${title}" đã được ghi nhận với mã ${feedbackId} và chuyển tới Chủ tịch UBND xã Phú Lộc để xem xét xử lý theo quy định.`);
             document.getElementById('feedbackTitle').value = '';
+            updateAdminDashboardData();
         }
 
-        // 5. Quản trị viên Modal Toggle & Render
-        function toggleAdminModal() {
-            const modal = document.getElementById('adminModal');
-            modal.classList.toggle('hidden');
-            if(!modal.classList.contains('hidden')) {
-                updateAdminData();
+        // 5. Xác thực Quản trị viên (admin.phuloc / Phuloc2026@)
+        function openAdminAuthModal() {
+            document.getElementById('adminAuthModal').classList.remove('hidden');
+            document.getElementById('loginErrorMsg').classList.add('hidden');
+            document.getElementById('adminUser').value = '';
+            document.getElementById('adminPass').value = '';
+        }
+
+        function closeAdminAuthModal() {
+            document.getElementById('adminAuthModal').classList.add('hidden');
+        }
+
+        function handleAdminLogin(event) {
+            event.preventDefault();
+            const user = document.getElementById('adminUser').value.trim();
+            const pass = document.getElementById('adminPass').value.trim();
+
+            if (user === 'admin.phuloc' && pass === 'Phuloc2026@') {
+                closeAdminAuthModal();
+                document.getElementById('adminDashboardModal').classList.remove('hidden');
+                updateAdminDashboardData();
+            } else {
+                document.getElementById('loginErrorMsg').classList.remove('hidden');
             }
         }
 
-        function updateAdminData() {
-            const tbody = document.getElementById('adminAppointmentTableBody');
-            const badge = document.getElementById('badgeAppointmentCount');
-            const statCount = document.getElementById('statAppointmentCount');
-            
-            badge.innerText = appointments.length + ' lịch hẹn';
-            statCount.innerText = appointments.length;
+        function closeAdminDashboard() {
+            document.getElementById('adminDashboardModal').classList.add('hidden');
+        }
 
-            tbody.innerHTML = '';
-            appointments.forEach(app => {
+        // Chuyển tab trong bảng quản trị
+        function switchAdminTab(tabName) {
+            const secAppo = document.getElementById('adminSectionAppo');
+            const secFeed = document.getElementById('adminSectionFeed');
+            const btnAppo = document.getElementById('tabBtnAppo');
+            const btnFeed = document.getElementById('tabBtnFeed');
+
+            if (tabName === 'appointments') {
+                secAppo.classList.remove('hidden');
+                secFeed.classList.add('hidden');
+                btnAppo.className = "pb-2 border-b-2 border-blue-600 text-blue-900 flex items-center gap-1.5";
+                btnFeed.className = "pb-2 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5";
+            } else {
+                secAppo.classList.add('hidden');
+                secFeed.classList.remove('hidden');
+                btnFeed.className = "pb-2 border-b-2 border-blue-600 text-blue-900 flex items-center gap-1.5";
+                btnAppo.className = "pb-2 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5";
+            }
+        }
+
+        // Cập nhật dữ liệu hiển thị trong trang quản trị
+        function updateAdminDashboardData() {
+            const tbodyAppo = document.getElementById('adminAppointmentTableBody');
+            const tbodyFeed = document.getElementById('adminFeedbackTableBody');
+            
+            document.getElementById('countAppoBadge').innerText = appointments.length;
+            document.getElementById('countFeedBadge').innerText = feedbacks.length;
+            document.getElementById('statAppointmentCount').innerText = appointments.length;
+
+            // Render Lịch hẹn
+            tbodyAppo.innerHTML = '';
+            appointments.forEach((app, index) => {
                 let tr = document.createElement('tr');
                 tr.className = 'hover:bg-slate-50 border-b';
                 tr.innerHTML = `
@@ -521,13 +655,48 @@
                     <td class="p-2.5">${app.phone}</td>
                     <td class="p-2.5">${app.field}</td>
                     <td class="p-2.5">${app.date} <br/><span class="text-slate-400">${app.time}</span></td>
+                    <td class="p-2.5 italic text-slate-600">${app.note}</td>
                     <td class="p-2.5"><span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-semibold text-[11px]">${app.status}</span></td>
+                    <td class="p-2.5">
+                        <button onclick="confirmAppointment(${index})" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2 py-1 rounded text-[11px] font-medium">Duyệt lịch</button>
+                    </td>
                 `;
-                tbody.appendChild(tr);
+                tbodyAppo.appendChild(tr);
+            });
+
+            // Render Phản ánh
+            tbodyFeed.innerHTML = '';
+            feedbacks.forEach((feed, index) => {
+                let tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-50 border-b';
+                tr.innerHTML = `
+                    <td class="p-2.5 font-bold text-slate-800">${feed.id}</td>
+                    <td class="p-2.5 font-medium text-blue-900">${feed.title}</td>
+                    <td class="p-2.5">${feed.date}</td>
+                    <td class="p-2.5"><span class="bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-semibold text-[11px]">${feed.status}</span></td>
+                    <td class="p-2.5">
+                        <button onclick="resolveFeedback(${index})" class="bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded text-[11px] font-medium">Đã xử lý</button>
+                    </td>
+                `;
+                tbodyFeed.appendChild(tr);
             });
         }
 
-        // 6. Thêm liên kết mới từ giao diện
+        function confirmAppointment(index) {
+            appointments[index].status = 'Đã xác nhận';
+            localStorage.setItem('phuloc_appointments', JSON.stringify(appointments));
+            updateAdminDashboardData();
+            alert('Đã duyệt và xác nhận lịch hẹn thành công!');
+        }
+
+        function resolveFeedback(index) {
+            feedbacks[index].status = 'Đã hoàn thành';
+            localStorage.setItem('phuloc_feedbacks', JSON.stringify(feedbacks));
+            updateAdminDashboardData();
+            alert('Đã cập nhật trạng thái phản ánh thành công!');
+        }
+
+        // 6. Thêm liên kết mới từ giao diện quản trị
         function addNewLink() {
             const name = document.getElementById('newLinkName').value.trim();
             const url = document.getElementById('newLinkUrl').value.trim();
@@ -549,7 +718,7 @@
 
         // Chạy khởi tạo khi load trang
         window.onload = function() {
-            updateAdminData();
+            updateAdminDashboardData();
         }
 
         function handleSearch() {
