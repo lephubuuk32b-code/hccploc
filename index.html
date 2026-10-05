@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cổng thông tin Hành chính công xã Phú Lộc - TP. Huế</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1d4ed8', // Xanh dương chủ đạo nhà nước
+                        primary: '#1d4ed8', // Xanh dương nhà nước
                         secondary: '#b91c1c', // Đỏ cờ
                         accent: '#f59e0b', // Vàng huy hiệu
                         darkbg: '#0f172a'
@@ -38,9 +37,10 @@
                 <span class="hidden md:inline"><i class="fa-solid fa-location-dot text-red-500 mr-1"></i> Thành phố Huế</span>
             </div>
             <div class="flex items-center gap-4">
-                <a href="https://dichvucong.gov.vn" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-globe text-blue-400"></i> Cổng DVC Quốc gia</a>
-                <a href="https://hue.gov.vn" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-building-columns text-yellow-400"></i> Cổng TP. Huế</a>
-                <button onclick="openAdminAuthModal()" class="bg-accent/20 text-accent px-2 py-1 rounded hover:bg-accent hover:text-slate-900 font-medium transition flex items-center gap-1">
+                <a href="https://dichvucong.gov.vn/" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-globe text-blue-400"></i> Cổng DVC Quốc gia</a>
+                <a href="https://hue.gov.vn/" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-building-columns text-yellow-400"></i> Cổng TP. Huế</a>
+                <a href="https://phuloc.hue.gov.vn/" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-house-chimney text-emerald-400"></i> Xã Phú Lộc</a>
+                <button onclick="openAdminAuthModal()" class="bg-accent/20 text-accent px-2.5 py-1 rounded hover:bg-accent hover:text-slate-900 font-semibold transition flex items-center gap-1 shadow-sm">
                     <i class="fa-solid fa-user-shield"></i> Quản trị viên
                 </button>
             </div>
@@ -51,12 +51,15 @@
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <!-- Logo & Title -->
             <div class="flex items-center gap-3 text-center md:text-left">
-                <div class="w-12 h-12 bg-white text-blue-800 rounded-full flex items-center justify-center font-bold text-xl shadow">
-                    <i class="fa-solid fa-scale-balanced"></i>
+                <!-- Logo Cải cách hành chính chuẩn -->
+                <div class="relative w-14 h-14 bg-white text-blue-900 rounded-lg flex flex-col items-center justify-center font-extrabold shadow-lg border-2 border-amber-400 overflow-hidden group">
+                    <div class="absolute top-0 w-full bg-red-600 text-[8px] text-white tracking-tighter py-0.5 text-center font-bold uppercase">CCHC</div>
+                    <i class="fa-solid fa-scale-balanced text-xl mt-1 text-blue-800"></i>
+                    <div class="text-[9px] font-bold text-slate-700 tracking-tighter">VIỆT NAM</div>
                 </div>
                 <div>
                     <h1 class="text-xs uppercase tracking-wider text-blue-200 font-semibold">ỦY BAN NHÂN DÂN XÃ PHÚ LỘC</h1>
-                    <h2 class="text-lg md:text-xl font-bold uppercase tracking-tight">TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ PHÚ LỘC</h2>
+                    <h2 class="text-base md:text-xl font-extrabold uppercase tracking-tight">TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG</h2>
                 </div>
             </div>
             <!-- Hotline & Giờ làm việc -->
@@ -67,7 +70,7 @@
                 </div>
                 <a href="tel:02343890009" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-2 shadow transition">
                     <i class="fa-solid fa-phone-volume"></i>
-                    <span>Đường dây nóng: [0234.389.0009]</span>
+                    <span>Đường dây nóng: 0234.389.0009</span>
                 </a>
             </div>
         </div>
@@ -77,12 +80,11 @@
             <div class="max-w-7xl mx-auto px-4 flex items-center justify-between overflow-x-auto">
                 <div class="flex items-center space-x-1 py-2 text-sm font-medium whitespace-nowrap">
                     <a href="#" class="px-3 py-2 rounded hover:bg-blue-800 text-white font-semibold bg-blue-800 flex items-center gap-1.5"><i class="fa-solid fa-house"></i> Trang chủ</a>
-                    <a href="#gioi-thieu" class="px-3 py-2 rounded hover:bg-blue-800 text-slate-200 transition">Giới thiệu</a>
                     <a href="#thu-tuc" class="px-3 py-2 rounded hover:bg-blue-800 text-slate-200 transition">Thủ tục hành chính</a>
                     <a href="#dat-lich" class="px-3 py-2 rounded hover:bg-blue-800 text-slate-200 transition text-accent font-semibold"><i class="fa-regular fa-calendar-check mr-1"></i> Đặt lịch hẹn</a>
                     <a href="#tra-cuu" class="px-3 py-2 rounded hover:bg-blue-800 text-slate-200 transition">Tra cứu hồ sơ</a>
                     <a href="#phan-anh" class="px-3 py-2 rounded hover:bg-blue-800 text-slate-200 transition">Phản ánh kiến nghị</a>
-                    <a href="#lien-he" class="px-3 py-2 rounded hover:bg-blue-800 text-slate-200 transition">Liên hệ</a>
+                    <a href="#lien-ket" class="px-3 py-2 rounded hover:bg-blue-800 text-slate-200 transition">Liên kết hệ thống</a>
                 </div>
             </div>
         </nav>
@@ -93,7 +95,6 @@
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">GIẢI QUYẾT THỦ TỤC HÀNH CHÍNH NHANH CHÓNG - MINH BẠCH - HIỆU QUẢ</h2>
             <p class="text-blue-100 max-w-2xl mx-auto text-sm md:text-base">Chào mừng công dân và doanh nghiệp đến với Cổng thông tin trực tuyến của Trung tâm Phục vụ hành chính công xã Phú Lộc, TP. Huế.</p>
             
-            <!-- Hộp tìm kiếm thủ tục nhanh -->
             <div class="bg-white p-3 rounded-xl shadow-lg max-w-3xl mx-auto flex flex-col md:flex-row gap-2">
                 <div class="flex-1 flex items-center bg-slate-100 px-3 py-2 rounded-lg">
                     <i class="fa-solid fa-magnifying-glass text-slate-400 mr-2"></i>
@@ -108,10 +109,10 @@
 
     <main class="max-w-7xl mx-auto px-4 py-8 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
         
-        <!-- CỘT CHÍNH (BÊN TRÁI & GIỮA - 2 CỘT) -->
+        <!-- CỘT CHÍNH (2 CỘT) -->
         <div class="lg:col-span-2 space-y-8">
 
-            <!-- DỊCH VỤ CÔNG NỔI BẬT & ĐIỀU PHỐI DVC QUỐC GIA -->
+            <!-- THỦ TỤC HÀNH CHÍNH PHỔ BIẾN -->
             <section id="thu-tuc" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <div class="flex justify-between items-center mb-6 border-b pb-3">
                     <h3 class="text-lg font-bold text-blue-900 uppercase flex items-center gap-2">
@@ -120,7 +121,6 @@
                     <span class="text-xs text-slate-500 italic">Click để chuyển đến Cổng DVC Quốc gia</span>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Item 1: Khai sinh dưới 6 tuổi -->
                     <div onclick="openProcedure('khai-sinh')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
                         <div class="flex items-start justify-between">
                             <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2 group-hover:bg-blue-600 group-hover:text-white transition">
@@ -131,7 +131,6 @@
                         <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Đăng ký khai sinh cho trẻ em dưới 6 tuổi</h4>
                         <p class="text-xs text-slate-500 mt-1">Lĩnh vực: Tư pháp - Hộ tịch</p>
                     </div>
-                    <!-- Item 2: Đăng ký kết hôn -->
                     <div onclick="openProcedure('ket-hon')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
                         <div class="flex items-start justify-between">
                             <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2 group-hover:bg-blue-600 group-hover:text-white transition">
@@ -142,24 +141,22 @@
                         <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Đăng ký kết hôn</h4>
                         <p class="text-xs text-slate-500 mt-1">Lĩnh vực: Tư pháp - Hộ tịch</p>
                     </div>
-                    <!-- Item 3: Chứng thực (Thủ tục mới thêm) -->
                     <div onclick="openProcedure('chung-thuc')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
                         <div class="flex items-start justify-between">
                             <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2 group-hover:bg-blue-600 group-hover:text-white transition">
                                 <i class="fa-solid fa-stamp"></i>
                             </div>
-                            <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-semibold">Trực tuyến một phần / Trực tiếp</span>
+                            <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-semibold">Trực tuyến / Trực tiếp</span>
                         </div>
                         <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Chứng thực bản sao từ bản chính, chứng thực chữ ký</h4>
                         <p class="text-xs text-slate-500 mt-1">Lĩnh vực: Tư pháp - Hộ tịch</p>
                     </div>
-                    <!-- Item 4: Đăng ký đất đai lần đầu (Thủ tục mới thêm) -->
                     <div onclick="openProcedure('dat-dai-lan-dau')" class="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition cursor-pointer bg-slate-50 group">
                         <div class="flex items-start justify-between">
                             <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2 group-hover:bg-blue-600 group-hover:text-white transition">
                                 <i class="fa-solid fa-map-location-dot"></i>
                             </div>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-semibold">Trực tuyến / Tại bộ phận Một cửa</span>
+                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-semibold">Tại bộ phận Một cửa</span>
                         </div>
                         <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">Đăng ký đất đai lần đầu, cấp Giấy chứng nhận QSDĐ</h4>
                         <p class="text-xs text-slate-500 mt-1">Lĩnh vực: Địa chính - Đất đai</p>
@@ -216,50 +213,52 @@
                         <i class="fa-solid fa-paper-plane"></i> Gửi thông tin đặt lịch hẹn về Trung tâm
                     </button>
                 </form>
-                <div id="apoSuccessMsg" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg text-sm">
-                    <!-- Dynamic success message -->
-                </div>
+                <div id="apoSuccessMsg" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg text-sm"></div>
             </section>
 
-            <!-- TRA CỨU HỒ SƠ & PHẢN ÁNH -->
+            <!-- TRA CỨU HỒ SƠ & PHẢN ÁNH KIẾN NGHỊ -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Tra cứu hồ sơ -->
+                <!-- Tra cứu hồ sơ (Chuyển sang link dichvucong.gov.vn/tra-cuu-ho-so với mã sẵn) -->
                 <section id="tra-cuu" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-between">
                     <div>
                         <h3 class="text-base font-bold text-blue-900 uppercase mb-3 flex items-center gap-2">
                             <i class="fa-solid fa-barcode text-blue-600"></i> Tra cứu hồ sơ Một cửa
                         </h3>
-                        <p class="text-xs text-slate-500 mb-4">Nhập mã hồ sơ được cung cấp trên giấy biên nhận để theo dõi tiến độ xử lý.</p>
+                        <p class="text-xs text-slate-500 mb-4">Nhập mã hồ sơ trên biên nhận. Khi nhấn kiểm tra tiến độ, hệ thống tự động chuyển sang Cổng DVC Quốc gia với mã đã nhập sẵn.</p>
                         <div class="space-y-3">
-                            <input type="text" id="lookupCode" placeholder="Nhập mã hồ sơ (ví dụ: HS-2026-XXXX)" class="w-full px-3 py-2 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="text" id="lookupCode" placeholder="Nhập mã hồ sơ (ví dụ: 000.00.12.H28-260312...)" class="w-full px-3 py-2 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500 font-mono">
                         </div>
                     </div>
-                    <button onclick="performLookup()" class="mt-4 w-full bg-slate-800 hover:bg-slate-900 text-white font-semibold py-2 rounded-lg text-sm transition">
-                        Kiểm tra tiến độ hồ sơ
+                    <button onclick="performLookup()" class="mt-4 w-full bg-slate-800 hover:bg-slate-900 text-white font-semibold py-2.5 rounded-lg text-sm transition shadow flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Kiểm tra tiến độ hồ sơ
                     </button>
                 </section>
 
-                <!-- Phản ánh kiến nghị -->
+                <!-- Phản ánh kiến nghị (Được bổ sung đầy đủ Họ tên, số điện thoại, nội dung) -->
                 <section id="phan-anh" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-between">
                     <div>
                         <h3 class="text-base font-bold text-blue-900 uppercase mb-3 flex items-center gap-2">
                             <i class="fa-solid fa-comments text-blue-600"></i> Phản ánh - Kiến nghị
                         </h3>
-                        <p class="text-xs text-slate-500 mb-4">Gửi ý kiến đóng góp hoặc phản ánh về thủ tục hành chính và thái độ phục vụ.</p>
-                        <input type="text" id="feedbackTitle" placeholder="Tiêu đề phản ánh..." class="w-full px-3 py-2 border rounded-lg text-sm outline-none mb-2">
+                        <p class="text-xs text-slate-500 mb-3">Gửi ý kiến đóng góp hoặc phản ánh về thủ tục hành chính, thái độ phục vụ.</p>
+                        <div class="space-y-2">
+                            <input type="text" id="feedbackName" placeholder="Họ và tên công dân (*)" class="w-full px-3 py-2 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="tel" id="feedbackPhone" placeholder="Số điện thoại liên hệ (*)" class="w-full px-3 py-2 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500">
+                            <textarea id="feedbackContent" rows="2" placeholder="Nội dung phản ánh kiến nghị chi tiết (*)" class="w-full px-3 py-2 border rounded-lg text-sm outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
                     </div>
-                    <button onclick="submitFeedback()" class="mt-4 w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 rounded-lg text-sm transition">
-                        Gửi phản ánh trực tuyến
+                    <button onclick="submitFeedback()" class="mt-4 w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2.5 rounded-lg text-sm transition shadow flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Gửi phản ánh trực tuyến
                     </button>
                 </section>
             </div>
 
         </div>
 
-        <!-- CỘT PHỤ (BÊN PHẢI - 1 CỘT: THỐNG KÊ, TIN TỨC, LIÊN KẾT) -->
+        <!-- CỘT PHỤ (BÊN PHẢI) -->
         <div class="space-y-6">
             
-            <!-- THỐNG KÊ GIAO DỊCH -->
+            <!-- THỐNG KÊ GIAO DỊCH TRONG NGÀY -->
             <section class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <h3 class="text-base font-bold text-blue-900 uppercase mb-4 border-b pb-2 flex items-center gap-2">
                     <i class="fa-solid fa-chart-pie text-blue-600"></i> Thống kê trong ngày
@@ -280,7 +279,7 @@
                 </div>
             </section>
 
-            <!-- TIN TỨC & THÔNG BÁO -->
+            <!-- THÔNG BÁO ĐIỀU HÀNH -->
             <section class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <h3 class="text-base font-bold text-blue-900 uppercase mb-4 border-b pb-2 flex items-center gap-2">
                     <i class="fa-solid fa-bullhorn text-blue-600"></i> Thông báo điều hành
@@ -291,33 +290,29 @@
                         <span class="text-xs text-slate-400 mt-1 block"><i class="fa-regular fa-clock mr-1"></i> Hôm nay</span>
                     </li>
                     <li class="border-b pb-2.5">
-                        <a href="#" class="font-medium text-slate-800 hover:text-blue-600 transition block">Triển khai dịch vụ công trực tuyến toàn trình đối với thủ tục Đăng ký đất đai lần đầu và Hộ tịch.</a>
+                        <a href="#" class="font-medium text-slate-800 hover:text-blue-600 transition block">Triển khai dịch vụ công trực tuyến toàn trình đối với thủ tục Đăng ký đất đai và Hộ tịch.</a>
                         <span class="text-xs text-slate-400 mt-1 block"><i class="fa-regular fa-clock mr-1"></i> 2 ngày trước</span>
-                    </li>
-                    <li>
-                        <a href="#" class="font-medium text-slate-800 hover:text-blue-600 transition block">Kế hoạch chuyển đổi số và nâng cao tỷ lệ hồ sơ trực tuyến tại xã Phú Lộc.</a>
-                        <span class="text-xs text-slate-400 mt-1 block"><i class="fa-regular fa-clock mr-1"></i> 5 ngày trước</span>
                     </li>
                 </ul>
             </section>
 
-            <!-- LIÊN KẾT HỆ THỐNG -->
-            <section class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+            <!-- LIÊN KẾT HỆ THỐNG CHUẨN (Theo yêu cầu mục 4) -->
+            <section id="lien-ket" class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <h3 class="text-base font-bold text-blue-900 uppercase mb-4 border-b pb-2 flex items-center gap-2">
                     <i class="fa-solid fa-link text-blue-600"></i> Liên kết hệ thống
                 </h3>
-                <div class="space-y-2 text-sm" id="externalLinksList">
-                    <a href="https://dichvucong.gov.vn" target="_blank" class="flex items-center justify-between p-2 rounded hover:bg-slate-100 transition text-slate-700">
+                <div class="space-y-2.5 text-sm" id="externalLinksList">
+                    <a href="https://dichvucong.gov.vn/" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-blue-900 transition text-slate-700 font-medium border border-slate-100">
                         <span>Cổng Dịch vụ công Quốc gia</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-blue-600"></i>
                     </a>
-                    <a href="https://dichvucong.thuathienhue.gov.vn" target="_blank" class="flex items-center justify-between p-2 rounded hover:bg-slate-100 transition text-slate-700">
-                        <span>Hệ thống Một cửa điện tử TP. Huế</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
+                    <a href="https://hue.gov.vn/" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-blue-900 transition text-slate-700 font-medium border border-slate-100">
+                        <span>Cổng thông tin điện tử TP. Huế</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-blue-600"></i>
                     </a>
-                    <a href="https://hue.gov.vn" target="_blank" class="flex items-center justify-between p-2 rounded hover:bg-slate-100 transition text-slate-700">
-                        <span>Cổng Thông tin điện tử TP. Huế</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
+                    <a href="https://phuloc.hue.gov.vn/" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg bg-slate-50 hover:bg-blue-50 hover:text-blue-900 transition text-slate-700 font-medium border border-slate-100">
+                        <span>Trang thông tin điện tử xã Phú Lộc</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-blue-600"></i>
                     </a>
                 </div>
             </section>
@@ -357,7 +352,6 @@
         </div>
     </footer>
 
-    <!-- Modal 1: Form Đăng nhập Quản trị viên -->
     <div id="adminAuthModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-xl shadow-2xl max-w-md w-full overflow-hidden">
             <div class="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
@@ -385,7 +379,6 @@
         </div>
     </div>
 
-    <!-- Modal 2: Bảng Quản trị (Hiển thị Lịch hẹn & Phản ánh kiến nghị) -->
     <div id="adminDashboardModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] flex flex-col overflow-hidden">
             <div class="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
@@ -396,23 +389,28 @@
             </div>
             
             <div class="p-6 overflow-y-auto space-y-6 flex-1 bg-slate-50">
-                <!-- Tab Tabs Navigation -->
-                <div class="flex border-b border-slate-200 gap-4 text-sm font-semibold">
-                    <button onclick="switchAdminTab('appointments')" id="tabBtnAppo" class="pb-2 border-b-2 border-blue-600 text-blue-900 flex items-center gap-1.5">
-                        <i class="fa-solid fa-calendar-check"></i> Quản lý Lịch hẹn (<span id="countAppoBadge">0</span>)
-                    </button>
-                    <button onclick="switchAdminTab('feedbacks')" id="tabBtnFeed" class="pb-2 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5">
-                        <i class="fa-solid fa-comments"></i> Phản ánh - Kiến nghị (<span id="countFeedBadge">0</span>)
+                <!-- Tabs Navigation -->
+                <div class="flex justify-between items-center border-b border-slate-200">
+                    <div class="flex gap-6 text-sm font-semibold">
+                        <button onclick="switchAdminTab('appointments')" id="tabBtnAppo" class="pb-2 border-b-2 border-blue-600 text-blue-900 flex items-center gap-1.5">
+                            <i class="fa-solid fa-calendar-check"></i> Quản lý Lịch hẹn (<span id="countAppoBadge">0</span>)
+                        </button>
+                        <button onclick="switchAdminTab('feedbacks')" id="tabBtnFeed" class="pb-2 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5">
+                            <i class="fa-solid fa-comments"></i> Phản ánh - Kiến nghị (<span id="countFeedBadge">0</span>)
+                        </button>
+                    </div>
+                    <button onclick="handleAdminLogout()" class="text-xs bg-red-100 text-red-700 hover:bg-red-200 font-bold px-3 py-1.5 rounded transition flex items-center gap-1">
+                        <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
                     </button>
                 </div>
 
-                <!-- Section 1: Quản lý Lịch hẹn -->
+                <!-- Section 1: Quản lý Lịch hẹn (Tổng hợp, xử lý, xác nhận) -->
                 <div id="adminSectionAppo" class="space-y-4">
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-blue-900 mb-3 flex items-center justify-between">
-                            <span>Danh sách Lịch hẹn trực tuyến từ Công dân</span>
-                            <span class="text-xs text-slate-500 font-normal">Cập nhật theo thời gian thực</span>
-                        </h4>
+                        <div class="flex justify-between items-center mb-3">
+                            <h4 class="font-bold text-blue-900">Danh sách Lịch hẹn trực tuyến từ công dân</h4>
+                            <span class="text-xs text-slate-500">Tổng hợp xử lý & xác nhận lịch hẹn</span>
+                        </div>
                         <div class="overflow-x-auto">
                             <table class="w-full text-left text-xs">
                                 <thead class="bg-slate-100 text-slate-700 uppercase">
@@ -424,86 +422,76 @@
                                         <th class="p-2.5">Ngày & Khung giờ</th>
                                         <th class="p-2.5">Nội dung</th>
                                         <th class="p-2.5">Trạng thái</th>
-                                        <th class="p-2.5">Thao tác</th>
+                                        <th class="p-2.5">Thao tác xử lý</th>
                                     </tr>
                                 </thead>
-                                <tbody id="adminAppointmentTableBody" class="divide-y divide-slate-200">
-                                    <!-- Data injected via JS -->
-                                </tbody>
+                                <tbody id="adminAppointmentTableBody" class="divide-y divide-slate-200"></tbody>
                             </table>
                         </div>
                     </div>
                 </div>
 
-                <!-- Section 2: Quản lý Phản ánh kiến nghị -->
+                <!-- Section 2: Quản lý Phản ánh - Kiến nghị (Tổng hợp, xử lý) -->
                 <div id="adminSectionFeed" class="space-y-4 hidden">
                     <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
-                        <h4 class="font-bold text-blue-900 mb-3">Danh sách Phản ánh - Kiến nghị từ nhân dân</h4>
+                        <div class="flex justify-between items-center mb-3">
+                            <h4 class="font-bold text-blue-900">Danh sách Phản ánh - Kiến nghị từ nhân dân</h4>
+                            <span class="text-xs text-slate-500">Tổng hợp & chuyển chuyên môn giải quyết</span>
+                        </div>
                         <div class="overflow-x-auto">
                             <table class="w-full text-left text-xs">
                                 <thead class="bg-slate-100 text-slate-700 uppercase">
                                     <tr>
                                         <th class="p-2.5">Mã phản ánh</th>
-                                        <th class="p-2.5">Tiêu đề phản ánh</th>
+                                        <th class="p-2.5">Công dân / SĐT</th>
+                                        <th class="p-2.5">Nội dung phản ánh</th>
                                         <th class="p-2.5">Ngày gửi</th>
-                                        <th class="p-2.5">Trạng thái xử lý</th>
-                                        <th class="p-2.5">Hành động</th>
+                                        <th class="p-2.5">Trạng thái</th>
+                                        <th class="p-2.5">Thao tác xử lý</th>
                                     </tr>
                                 </thead>
-                                <tbody id="adminFeedbackTableBody" class="divide-y divide-slate-200">
-                                    <!-- Data injected via JS -->
-                                </tbody>
+                                <tbody id="adminFeedbackTableBody" class="divide-y divide-slate-200"></tbody>
                             </table>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Thêm liên kết nhanh mới -->
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200">
-                    <h4 class="font-bold text-blue-900 mb-3"><i class="fa-solid fa-link text-blue-600 mr-2"></i> Thêm liên kết điều phối bên ngoài</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <input type="text" id="newLinkName" placeholder="Tên cổng/trang web..." class="px-3 py-2 border rounded text-sm outline-none">
-                        <input type="url" id="newLinkUrl" placeholder="https://..." class="px-3 py-2 border rounded text-sm outline-none">
-                        <button onclick="addNewLink()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded text-sm transition">Thêm liên kết</button>
                     </div>
                 </div>
             </div>
 
             <div class="bg-slate-100 px-6 py-3 border-t flex justify-between items-center">
-                <span class="text-xs text-slate-500"><i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> Đang đăng nhập với quyền: <strong>admin.phuloc</strong></span>
+                <span class="text-xs text-slate-500"><i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> Đang đăng nhập với quyền Quản trị hệ thống</span>
                 <button onclick="closeAdminDashboard()" class="bg-slate-700 hover:bg-slate-800 text-white px-4 py-2 rounded text-sm font-medium">Đóng bảng quản trị</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Cơ sở dữ liệu giả lập (LocalStorage) cho lịch hẹn và phản ánh
+        // Dữ liệu mẫu lưu trữ localStorage
         let appointments = JSON.parse(localStorage.getItem('phuloc_appointments')) || [
             { code: 'PHL-82910', name: 'Trần Văn Bình', phone: '0905123456', field: 'Hộ tịch - Tư pháp', date: '2026-10-05', time: 'Buổi sáng (07:30 - 11:00)', note: 'Đăng ký khai sinh cho con', status: 'Chờ tiếp nhận' },
             { code: 'PHL-44192', name: 'Lê Thị Hồng', phone: '0988776655', field: 'Đất đai - Xây dựng', date: '2026-10-06', time: 'Buổi chiều (13:30 - 16:30)', note: 'Đăng ký đất đai lần đầu', status: 'Đã xác nhận' }
         ];
 
         let feedbacks = JSON.parse(localStorage.getItem('phuloc_feedbacks')) || [
-            { id: 'PA-101', title: 'Đề nghị hỗ trợ thủ tục cấp Giấy chứng nhận QSDĐ tại thôn 3', date: '2026-09-28', status: 'Đã chuyển chuyên môn' },
-            { id: 'PA-102', title: 'Thủ tục xác nhận tình trạng hôn nhân nhanh chóng, cảm ơn cán bộ', date: '2026-09-30', status: 'Đã hoàn thành' }
+            { id: 'PA-101', name: 'Nguyễn Văn Hùng', phone: '0912345678', content: 'Đề nghị hỗ trợ thủ tục cấp Giấy chứng nhận QSDĐ tại thôn 3 nhanh chóng hơn.', date: '2026-09-28', status: 'Đã chuyển chuyên môn' },
+            { id: 'PA-102', name: 'Phạm Thị Lan', phone: '0935111222', content: 'Thủ tục xác nhận tình trạng hôn nhân rất thuận lợi, cảm ơn cán bộ tận tình.', date: '2026-09-30', status: 'Đã hoàn thành' }
         ];
 
-        // 1. Điều phối TTHC theo yêu cầu các liên kết cụ thể
+        // 1. Điều phối DVC Quốc gia
         function openProcedure(procType) {
-            let targetUrl = "https://dichvucong.gov.vn";
+            let targetUrl = "https://dichvucong.gov.vn/";
             let procTitle = "";
 
             if (procType === 'khai-sinh') {
                 targetUrl = "https://lienthong.dichvucong.gov.vn/#/?vneid=1";
                 procTitle = "Đăng ký khai sinh cho trẻ em dưới 6 tuổi";
             } else if (procType === 'ket-hon') {
-                targetUrl = "https://dichvucong.gov.vn/thu-tuc-hanh-chinh/019d2bfd-3fac-7489-b53b-a15eb239a6fe";
+                targetUrl = "https://dichvucong.gov.vn/";
                 procTitle = "Đăng ký kết hôn";
             } else if (procType === 'chung-thuc') {
-                targetUrl = "https://dichvucong.gov.vn";
+                targetUrl = "https://dichvucong.gov.vn/";
                 procTitle = "Chứng thực bản sao từ bản chính";
             } else if (procType === 'dat-dai-lan-dau') {
-                targetUrl = "https://dichvucong.gov.vn";
+                targetUrl = "https://dichvucong.gov.vn/";
                 procTitle = "Đăng ký đất đai lần đầu";
             }
 
@@ -512,7 +500,7 @@
             }
         }
 
-        // 2. Xử lý đặt lịch hẹn trực tuyến
+        // 2. Đặt lịch hẹn
         function submitAppointment(event) {
             event.preventDefault();
             const name = document.getElementById('apoName').value;
@@ -538,41 +526,48 @@
             appointments.unshift(newAppo);
             localStorage.setItem('phuloc_appointments', JSON.stringify(appointments));
 
-            // Hiển thị thông báo thành công cho công dân
             const successBox = document.getElementById('apoSuccessMsg');
             successBox.classList.remove('hidden');
             successBox.innerHTML = `
                 <div class="font-bold text-base mb-1"><i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> Đặt lịch hẹn thành công!</div>
                 <div>Mã tra cứu lịch hẹn của bạn là: <strong class="text-blue-900">${randomCode}</strong></div>
-                <div class="text-xs text-slate-600 mt-1">Trung tâm Một cửa xã Phú Lộc đã nhận được thông tin và sẽ liên hệ xác nhận trước giờ hẹn. Vui lòng lưu lại mã tra cứu.</div>
+                <div class="text-xs text-slate-600 mt-1">Trung tâm Một cửa xã Phú Lộc đã nhận được thông tin và sẽ liên hệ xác nhận.</div>
             `;
 
             document.getElementById('appointmentForm').reset();
             updateAdminDashboardData();
         }
 
-        // 3. Tra cứu hồ sơ nhanh
+        // 3. Tra cứu hồ sơ (Chuyển sang link dichvucong.gov.vn/tra-cuu-ho-so với mã sẵn)
         function performLookup() {
             const code = document.getElementById('lookupCode').value.trim();
             if(!code) {
-                alert('Vui lòng nhập mã hồ sơ hợp lệ!');
+                alert('Vui lòng nhập mã hồ sơ để tiến hành kiểm tra!');
                 return;
             }
-            alert(`Đang tra cứu thông tin hồ sơ có mã: "${code}" trên Hệ thống Một cửa điện tử thành phố Huế. Trạng thái: Đang được cán bộ chuyên môn thụ lý giải quyết đúng hạn.`);
+            const targetUrl = `https://dichvucong.gov.vn/tra-cuu-ho-so?maHosox=${encodeURIComponent(code)}`;
+            if(confirm(`Hệ thống sẽ chuyển hướng bạn sang Cổng Dịch vụ công Quốc gia với mã hồ sơ: "${code}" đã được điền sẵn. Bạn chỉ cần nhập mã bảo mật để xem tiến độ chi tiết. Tiếp tục?`)) {
+                window.open(targetUrl, '_blank');
+            }
         }
 
-        // 4. Gửi phản ánh kiến nghị
+        // 4. Phản ánh kiến nghị (Đầy đủ Họ tên, SĐT, nội dung)
         function submitFeedback() {
-            const title = document.getElementById('feedbackTitle').value.trim();
-            if(!title) {
-                alert('Vui lòng nhập nội dung phản ánh kiến nghị!');
+            const name = document.getElementById('feedbackName').value.trim();
+            const phone = document.getElementById('feedbackPhone').value.trim();
+            const content = document.getElementById('feedbackContent').value.trim();
+
+            if(!name || !phone || !content) {
+                alert('Vui lòng cung cấp đầy đủ Họ và tên, Số điện thoại và Nội dung phản ánh!');
                 return;
             }
 
             const feedbackId = 'PA-' + Math.floor(100 + Math.random() * 900);
             const newFeed = {
                 id: feedbackId,
-                title: title,
+                name: name,
+                phone: phone,
+                content: content,
                 date: new Date().toISOString().slice(0, 10),
                 status: 'Mới tiếp nhận'
             };
@@ -580,12 +575,14 @@
             feedbacks.unshift(newFeed);
             localStorage.setItem('phuloc_feedbacks', JSON.stringify(feedbacks));
 
-            alert(`Cảm ơn bạn! Phản ánh "${title}" đã được ghi nhận với mã ${feedbackId} và chuyển tới Chủ tịch UBND xã Phú Lộc để xem xét xử lý theo quy định.`);
-            document.getElementById('feedbackTitle').value = '';
+            alert(`Cảm ơn công dân ${name}! Phản ánh của bạn đã được ghi nhận với mã ${feedbackId} và chuyển tới Chủ tịch UBND xã Phú Lộc xem xét xử lý.`);
+            document.getElementById('feedbackName').value = '';
+            document.getElementById('feedbackPhone').value = '';
+            document.getElementById('feedbackContent').value = '';
             updateAdminDashboardData();
         }
 
-        // 5. Xác thực Quản trị viên (admin.phuloc / Phuloc2026@)
+        // 5. Xác thực Admin ID: admin.phuloc & Mật khẩu: Phuloc@2026
         function openAdminAuthModal() {
             document.getElementById('adminAuthModal').classList.remove('hidden');
             document.getElementById('loginErrorMsg').classList.add('hidden');
@@ -602,12 +599,18 @@
             const user = document.getElementById('adminUser').value.trim();
             const pass = document.getElementById('adminPass').value.trim();
 
-            if (user === 'admin.phuloc' && pass === 'Phuloc2026@') {
+            if (user === 'admin.phuloc' && pass === 'Phuloc@2026') {
                 closeAdminAuthModal();
                 document.getElementById('adminDashboardModal').classList.remove('hidden');
                 updateAdminDashboardData();
             } else {
                 document.getElementById('loginErrorMsg').classList.remove('hidden');
+            }
+        }
+
+        function handleAdminLogout() {
+            if(confirm('Bạn có chắc chắn muốn đăng xuất khỏi tài khoản Quản trị viên không?')) {
+                document.getElementById('adminDashboardModal').classList.add('hidden');
             }
         }
 
@@ -635,7 +638,7 @@
             }
         }
 
-        // Cập nhật dữ liệu hiển thị trong trang quản trị
+        // Cập nhật bảng dữ liệu quản trị (Tổng hợp, xử lý, xác nhận)
         function updateAdminDashboardData() {
             const tbodyAppo = document.getElementById('adminAppointmentTableBody');
             const tbodyFeed = document.getElementById('adminFeedbackTableBody');
@@ -657,8 +660,9 @@
                     <td class="p-2.5">${app.date} <br/><span class="text-slate-400">${app.time}</span></td>
                     <td class="p-2.5 italic text-slate-600">${app.note}</td>
                     <td class="p-2.5"><span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-semibold text-[11px]">${app.status}</span></td>
-                    <td class="p-2.5">
-                        <button onclick="confirmAppointment(${index})" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2 py-1 rounded text-[11px] font-medium">Duyệt lịch</button>
+                    <td class="p-2.5 space-x-1 whitespace-nowrap">
+                        <button onclick="confirmAppointment(${index})" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2 py-1 rounded text-[11px] font-semibold">Xác nhận</button>
+                        <button onclick="deleteAppointment(${index})" class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded text-[11px]">Xóa</button>
                     </td>
                 `;
                 tbodyAppo.appendChild(tr);
@@ -671,11 +675,13 @@
                 tr.className = 'hover:bg-slate-50 border-b';
                 tr.innerHTML = `
                     <td class="p-2.5 font-bold text-slate-800">${feed.id}</td>
-                    <td class="p-2.5 font-medium text-blue-900">${feed.title}</td>
+                    <td class="p-2.5 font-medium">${feed.name} <br/><span class="text-slate-400">${feed.phone}</span></td>
+                    <td class="p-2.5 text-blue-900">${feed.content}</td>
                     <td class="p-2.5">${feed.date}</td>
                     <td class="p-2.5"><span class="bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-semibold text-[11px]">${feed.status}</span></td>
-                    <td class="p-2.5">
-                        <button onclick="resolveFeedback(${index})" class="bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded text-[11px] font-medium">Đã xử lý</button>
+                    <td class="p-2.5 space-x-1 whitespace-nowrap">
+                        <button onclick="resolveFeedback(${index})" class="bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded text-[11px] font-semibold">Đã xử lý</button>
+                        <button onclick="deleteFeedback(${index})" class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded text-[11px]">Xóa</button>
                     </td>
                 `;
                 tbodyFeed.appendChild(tr);
@@ -686,37 +692,32 @@
             appointments[index].status = 'Đã xác nhận';
             localStorage.setItem('phuloc_appointments', JSON.stringify(appointments));
             updateAdminDashboardData();
-            alert('Đã duyệt và xác nhận lịch hẹn thành công!');
+            alert('Đã xác nhận lịch hẹn của công dân thành công!');
+        }
+
+        function deleteAppointment(index) {
+            if(confirm('Bạn có chắc muốn xóa lịch hẹn này không?')) {
+                appointments.splice(index, 1);
+                localStorage.setItem('phuloc_appointments', JSON.stringify(appointments));
+                updateAdminDashboardData();
+            }
         }
 
         function resolveFeedback(index) {
             feedbacks[index].status = 'Đã hoàn thành';
             localStorage.setItem('phuloc_feedbacks', JSON.stringify(feedbacks));
             updateAdminDashboardData();
-            alert('Đã cập nhật trạng thái phản ánh thành công!');
+            alert('Đã cập nhật trạng thái xử lý phản ánh kiến nghị!');
         }
 
-        // 6. Thêm liên kết mới từ giao diện quản trị
-        function addNewLink() {
-            const name = document.getElementById('newLinkName').value.trim();
-            const url = document.getElementById('newLinkUrl').value.trim();
-            if(!name || !url) {
-                alert('Vui lòng nhập đầy đủ tên và đường dẫn URL!');
-                return;
+        function deleteFeedback(index) {
+            if(confirm('Bạn có chắc muốn xóa phản ánh này không?')) {
+                feedbacks.splice(index, 1);
+                localStorage.setItem('phuloc_feedbacks', JSON.stringify(feedbacks));
+                updateAdminDashboardData();
             }
-            const list = document.getElementById('externalLinksList');
-            let a = document.createElement('a');
-            a.href = url;
-            a.target = '_blank';
-            a.className = 'flex items-center justify-between p-2 rounded hover:bg-slate-100 transition text-slate-700';
-            a.innerHTML = `<span>${name}</span><i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>`;
-            list.appendChild(a);
-            document.getElementById('newLinkName').value = '';
-            document.getElementById('newLinkUrl').value = '';
-            alert('Đã thêm liên kết thành công vào danh sách nhanh!');
         }
 
-        // Chạy khởi tạo khi load trang
         window.onload = function() {
             updateAdminDashboardData();
         }
@@ -724,9 +725,9 @@
         function handleSearch() {
             const query = document.getElementById('searchInput').value.trim();
             if(query) {
-                alert(`Đang tìm kiếm các thủ tục hành chính liên quan đến từ khóa: "${query}". Hệ thống sẽ lọc kết quả phù hợp với thẩm quyền cấp xã.`);
+                alert(`Đang lọc thủ tục hành chính theo từ khóa: "${query}" tại xã Phú Lộc.`);
             } else {
-                alert('Vui lòng nhập từ khóa cần tra cứu!');
+                alert('Vui lòng nhập từ khóa thủ tục cần tra cứu!');
             }
         }
     </script>
